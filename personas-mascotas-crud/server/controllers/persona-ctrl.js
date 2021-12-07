@@ -1,4 +1,4 @@
-const Persona = require("../models/persona-models");
+const Persona = require("../models/persona-model");
 
 createPersona = (req, res) => {
   const body = req.body;
