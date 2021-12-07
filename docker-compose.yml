@@ -15,6 +15,15 @@ services:
         volumes:
           - /var/lib/docker/volumes/mongoVolume/_data
 
+    populate:
+        build: ./Base-de-datos
+        container_name: populate.py
+        depends_on:
+          - "mongodb"
+        restart: always
+        command: ["python", "./populate.py"]
+        volumes:
+          - ./populate:/usr/src/populate
 
     mongo-express:
         container_name: dbms
@@ -28,3 +37,4 @@ services:
             ME_CONFIG_MONGODB_ADMINPASSWORD: admin3231
             ME_CONFIG_BASICAUTH_USERNAME: admin
             ME_CONFIG_BASICAUTH_PASSWORD: admin3231
+
