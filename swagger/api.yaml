@@ -1,0 +1,122 @@
+swagger: "2.0"
+info:
+  description: "Documentacion del proyecto de DAS para los perritos     [Repositorio github](https://github.com/EdsonAmaya7/Microservicios) "
+  version: "1.0.0"
+  title: "microservicios DAS Perritos"
+  license:
+    name: "Arquitectura de Software"
+    url: "https://github.com/EdsonAmaya7/Microservicios"
+
+schemes:
+- "https"
+- "http"
+paths:
+  /user:
+    post:
+      tags:
+      - "user"
+      summary: "Agregar "
+      description: "el usuario puede agregar a la persona y la mascota"
+      operationId: "createPersona"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "crear a la persona y mascota"
+        required: true
+        schema:
+          $ref: "#/definitions/User"
+      responses:
+        default:
+          description: "Insert exitoso"
+
+  /user/{persona}:
+    get:
+      tags:
+      - "user"
+      summary: "Obtener persona por id"
+      description: ""
+      operationId: "getPersonaById"
+      produces:
+      # - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "persona"
+        in: "path"
+        description: "Se busca por el id de la persona"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Usuario encontrado"
+          schema:
+            $ref: "#/definitions/User"
+        "400":
+          description: "ingresa un personaId valido"
+        "404":
+          description: "no se encontro la persona"
+    put:
+      tags:
+      - "user"
+      summary: "Actualizar persona"
+      description: "Para actualizar el usuario se requiere el id"
+      operationId: "updatePersona"
+      produces:
+      # - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "persona"
+        in: "path"
+        description: "id de la persona a actualizar"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: ""
+        required: true
+        schema:
+          $ref: "#/definitions/User"
+      responses:
+        "400":
+          description: "el id de la persona no fue ingresado"
+        "404":
+          description: "no se actualizo la persona"
+    delete:
+      tags:
+      - "user"
+      summary: "Borrar persona"
+      description: "Solo el usuario puede eliminar"
+      operationId: "deletePersona"
+      produces:
+      # - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "persona"
+        in: "path"
+        description: "Se requiere el id de la persona a eliminar"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "El id de la persona no es valido"
+        "404":
+          description: "Persona no eliminada"
+          
+definitions:
+  User:
+    type: "object"
+    properties:
+      Personaid:
+        type: "integer"
+        format: "int64"
+      Nombre:
+        type: "string"
+      Apellido:
+        type: "string"
+      Imagen:
+        type: "string"
+      Nombre_mascota:
+        type: "string"
+      Imagen_mascota:
+        type: "string"
