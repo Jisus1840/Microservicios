@@ -15,15 +15,15 @@ services:
         volumes:
           - /var/lib/docker/volumes/mongoVolume/_data
 
-    # populate:
-    #     build: ./Base-de-datos
-    #     container_name: populate.py
-    #     depends_on:
-    #       - "mongodb"
-    #     restart: always
-    #     command: ["python", "./populate.py"]
-    #     volumes:
-    #       - ./populate:/usr/src/populate
+    populate:
+        build: ./Base-de-datos
+        container_name: populate.py
+        depends_on:
+          - "mongodb"
+        restart: always
+        command: ["python", "./populate.py"]
+        volumes:
+          - ./populate:/usr/src/populate
 
     mongo-express:
         container_name: dbms
