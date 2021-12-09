@@ -42,7 +42,7 @@ Angel Santiago Jaime Zavala.
 ## Pre requisitos
 - Docker
 - DockerCompose
-<br> <br> ![MERN IMAGE](Images\MERN.jpg)
+<br> <br> ![MERN IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/MERN.jpg)
 
 ## Tecnologías
 Para el desarrollo principal de este proyecto utilizamos el MERN STACK:
@@ -148,4 +148,4 @@ Mientras que para generar nuestro diagrama de base de datos usamos una herramien
 
 - A nuestro mismo equipo por contribuir frecuentemente a este proyecto, no darse por vencido y hacer un gran trabajo a pesar de las adversidades.
 
-- A spotify, por acompañarnos durante el desarrollo de  ete proyecto.
+- A spotify, por acompañarnos durante el desarrollo de  este proyecto.
