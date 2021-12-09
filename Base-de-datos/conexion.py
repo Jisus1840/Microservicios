@@ -6,6 +6,5 @@ def conexion():
     cliente = MongoClient("mongodb://admin:admin3231@localhost:27017/")
     db = cliente.dogs
     mydb = cliente['dogs']
-    # mycol = mydb['personas']
 
     return mydb
