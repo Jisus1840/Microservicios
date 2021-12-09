@@ -1,5 +1,6 @@
 import urllib
 from urllib import request
+from random import choice
 import json
 from conexion import *
 
@@ -28,8 +29,23 @@ def insertPersona():
 
 
 def insertPerros():
-
+    nombre_perrito = ["Snoopy", "Kira", "Meliodas", "Mimosa"]
     url = "https://dog.ceo/api/breeds/image/random"
+
+    perritos = []
+
+    for i in range(1, 20):
+        response = urllib.request.urlopen(url)
+        data = json.loads(response.read().decode())
+
+        perrito = {
+            "imagen": data.get("message"),
+            "status": data.get("status")
+        }
+        perritos.append(perrito)
+
+    tabla = conexion()
+    tabla['perritos'].insert_many(perritos)
 
 
 # Metodo que sirve para mostrar personas
@@ -41,3 +57,4 @@ def insertPerros():
 if __name__ == '__main__':
     insertPersona()
     # selectPersona()
+    insertPerros()
