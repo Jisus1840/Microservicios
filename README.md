@@ -88,21 +88,21 @@ La arquitectura establecida fue la de microservicios contando con un total de 5 
     ```
     > docker build -t "react-app" ./client/
     ```
-    ![CLIENT IMAGE](Images\cli_client.jpg)
+    ![CLIENT IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/cli_client.jpg)
 8. Corre el servidor.
     ```
     > docker build -t "api-server" ./server/
     ```
-    ![SERVER IMAGE](Images\cli_server.jpg)
+    ![SERVER IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/cli_server.jpg)
 9. Por último, corre el orquestador. 
 
     ```
     > docker-compose up
     ```
 
-    ![ORQUESTADOR IMAGE](Images\cli_orquestador.jpg)
+    ![ORQUESTADOR IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/cli_orquestador.jpg)
     
-    ![DOCKER IMAGE](Images\docker.jpg)
+    ![DOCKER IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/docker.jpg)
 ## Instrucciones para acceder a los servicios
 1. El servicio de MongoDB corre en el puerto 27017.
 2. El servicio de NodeJS y Express (API) corre en http://localhost:3000. 
@@ -112,20 +112,20 @@ La arquitectura establecida fue la de microservicios contando con un total de 5 
 Este servicio nos permite registrar usuarios con respectivas mascotas (Únicamente perros). 
 
 Al dar clic en ___Crear datos___, podrás registrar tus propios usuarios. Por defecto el formulario ya cuenta con información base para que la demostración sea más rápida.
-<br> <br> ![REACT1 IMAGE](Images\react_1.jpg)
+<br> <br> ![REACT1 IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/react_1.jpg)
 
 Si los campos se encuentran llenados correctamente, nos aparece una alerta de éxito.
-<br> <br> ![REACT2 IMAGE](Images\react_2.jpg)
+<br> <br> ![REACT2 IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/react_2.jpg)
 
 
 De lo contrario, no podrá avanzar al registro.
 
 Al dar clic en ___Listar datos___, podemos acceder a las personas guardadas correctamente. 
-<br> <br> ![REACT3 IMAGE](Images\react_3.jpg)
+<br> <br> ![REACT3 IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/react_3.jpg)
 
 Aquí podemos **leer**, **modificar** y **eliminar** los datos de cualquier persona deseada.
-<br> <br> ![REACT4 IMAGE](Images\react_4.jpg)
-<br> <br> ![REACT5 IMAGE](Images\react_5.jpg)
+<br> <br> ![REACT4 IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/react_4.jpg)
+<br> <br> ![REACT5 IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/react_5.jpg)
 
 
 ##  Diagramas de Arquitectura
@@ -138,10 +138,10 @@ El script llamado diagrama.py de la carpeta diagrams se encarga de generar el es
 ```
 > Python diagrama.py
 ```
-![DIAGRAMA ARQUITECTURA IMAGE](diagrams\arquitectura_diagrama.jpg)
+![DIAGRAMA ARQUITECTURA IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/arquitectura_diagrama.jpg)
 
 Mientras que para generar nuestro diagrama de base de datos usamos una herramienta online. Estos archivos los podrás encontrar en la carpeta llamada diagrams.
-<br> <br> ![DIAGRAMA DB IMAGE](diagrams\diagrama_db.jpg)
+<br> <br> ![DIAGRAMA DB IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/diagrama_db.jpg)
 
 ## Agradecimientos
 - Al profesor Angel Santiago Jaime Zavala, por siempre estar al pendiente de nosotros y nuestras necesidades. Lo tqm. 
