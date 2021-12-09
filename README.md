@@ -138,10 +138,10 @@ El script llamado diagrama.py de la carpeta diagrams se encarga de generar el es
 ```
 > Python diagrama.py
 ```
-![DIAGRAMA ARQUITECTURA IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/arquitectura_diagrama.jpg)
+![DIAGRAMA ARQUITECTURA IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/diagrams/arquitectura_diagrama.jpg)
 
 Mientras que para generar nuestro diagrama de base de datos usamos una herramienta online. Estos archivos los podrás encontrar en la carpeta llamada diagrams.
-<br> <br> ![DIAGRAMA DB IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/diagrama_db.jpg)
+<br> <br> ![DIAGRAMA DB IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/diagrams/diagrama_db.jpg)
 
 ## Agradecimientos
 - Al profesor Angel Santiago Jaime Zavala, por siempre estar al pendiente de nosotros y nuestras necesidades. Lo tqm. 
