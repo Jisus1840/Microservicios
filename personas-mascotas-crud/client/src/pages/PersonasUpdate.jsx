@@ -42,8 +42,10 @@ class PersonasUpdate extends Component {
         this.state = {
             id: this.props.match.params.id,
             name: '',
-            rating: '',
-            time: '',
+            last: '',
+            image: '',
+            pet_name: '',
+            pet_image: '',
         }
     }
 
@@ -52,30 +54,40 @@ class PersonasUpdate extends Component {
         this.setState({ name })
     }
 
-    handleChangeInputRating = async event => {
-        const rating = event.target.validity.valid
-            ? event.target.value
-            : this.state.rating
+    handleChangeInputLast = async event => {
+        const last = event.target.value;
 
-        this.setState({ rating })
+        this.setState({ last })
     }
 
-    handleChangeInputTime = async event => {
-        const time = event.target.value
-        this.setState({ time })
+    handleChangeInputImage = async event => {
+        const image = event.target.value;
+        this.setState({ image });
     }
 
-    handleUpdateMovie = async () => {
-        const { id, name, rating, time } = this.state
-        const arrayTime = time.split('/')
-        const payload = { name, rating, time: arrayTime }
+    handleChangePetName = async (event) => {
+        const pet_name = event.target.value;
+        this.setState({ pet_name });
+      };
+    
+    handleChangePetImage = async (event) => {
+    const pet_image = event.target.value;
+    this.setState({ pet_image});
+    };
 
-        await api.updateMovieById(id, payload).then(res => {
-            window.alert(`Movie updated successfully`)
+    handleUpdatePersonas = async () => {
+        const { id, name, last, image, pet_name, pet_image } = this.state
+        const payload = { name, last, image, pet_name, pet_image }
+        // pet_name: ''
+
+        await api.updatePersonaById(id, payload).then(res => {
+            window.alert(`Persona actualizada correctamente`)
             this.setState({
-                name: '',
-                rating: '',
-                time: '',
+                name: "",
+                last: "",
+                image: "",
+                pet_name: "",
+                pet_image: "",
             })
         })
     }
@@ -86,16 +98,18 @@ class PersonasUpdate extends Component {
 
         this.setState({
             name: person.data.data.name,
-            rating: person.data.data.rating,
-            time: person.data.data.time.join('/'),
+            last: person.data.data.last,
+            image: person.data.data.image,
+            pet_name: person.data.data.pet_name,
+            pet_image: person.data.data.pet_image,
         })
     }
 
     render() {
-        const { name, rating, time } = this.state
+        const { name, last, image, pet_name, pet_image } = this.state
         return (
             <Wrapper>
-                <Title>Create Movie</Title>
+                <Title>Modificar Persona</Title>
 
                 <Label>Name: </Label>
                 <InputText
@@ -104,26 +118,31 @@ class PersonasUpdate extends Component {
                     onChange={this.handleChangeInputName}
                 />
 
-                <Label>Rating: </Label>
+                <Label>Apellido: </Label>
+                <InputText type="text" value={last} onChange={this.handleChangeInputLast} />
+
+                <Label>Imagen: </Label>
                 <InputText
-                    type="number"
-                    step="0.1"
-                    lang="en-US"
-                    min="0"
-                    max="10"
-                    pattern="[0-9]+([,\.][0-9]+)?"
-                    value={rating}
-                    onChange={this.handleChangeInputRating}
+                type="text"
+                value={image}
+                onChange={this.handleChangeInputImage}
                 />
 
-                <Label>Time: </Label>
+                <Label>Nombre Mascota: </Label>
                 <InputText
-                    type="text"
-                    value={time}
-                    onChange={this.handleChangeInputTime}
+                type="text"
+                value={pet_name}
+                onChange={this.handleChangePetName}
                 />
 
-                <Button onClick={this.handleUpdateMovie}>Update Movie</Button>
+                <Label>Mascota Foto: </Label>
+                <InputText
+                type="text"
+                value={pet_image}
+                onChange={this.handleChangePetImage}
+                />
+
+                <Button onClick={this.handleUpdatePersonas}>Actualizar persona</Button>
                 <CancelButton href={'/personas/list'}>Cancel</CancelButton>
             </Wrapper>
         )
