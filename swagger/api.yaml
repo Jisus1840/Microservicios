@@ -102,7 +102,7 @@ paths:
           description: "El id de la persona no es valido"
         "404":
           description: "Persona no eliminada"
-          
+
 definitions:
   User:
     type: "object"

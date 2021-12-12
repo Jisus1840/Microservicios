@@ -14,7 +14,7 @@ Angel Santiago Jaime Zavala.
 - Amaya López Edson Gerardo
 - Briones Esquivel Patricia Isabel
 - De la Cruz Dávila Jesús Salvador
-- ~~Rodríguez Mártinez Jose Adrián~~
+- Rodríguez Mártinez Jose Adrián
 
 ## Pre requisitos
 - Docker
@@ -27,11 +27,11 @@ Para el desarrollo principal de este proyecto utilizamos el MERN STACK:
 - Mongo (Database)
 - Express (Backend)
 - ReactJS (Frontend)
-- NodeJS (Backend) 
+- NodeJS (Backend)
 
 Además de las siguientes tecnologías:
 - MongoExpress (DBMS)
-- Diagrams (Python library to track the architecture diagrams) 
+- Diagrams (Python library to track the architecture diagrams)
 
 Para el tema de orquestadores y contenedores utilizamos:
 - Docker
@@ -42,51 +42,57 @@ La arquitectura establecida fue la de microservicios contando con un total de 5 
 - **Contenedor A:** Contiene una imagen funcional de MongoDB.
 - **Contenedor B:** Contiene una imagen funcional de MongoExpress.
 - **Contenedor C:** Contiene un scrapper hecho en NodeJS que se encarga de traer los datos e ingresarlos a la base de datos.
-- **Contenedor D:** Contiene una imagen de NodeJS y Express que servirá como API para lograr la comunicación y manejo de peticiones. 
+- **Contenedor D:** Contiene una imagen de NodeJS y Express que servirá como API para lograr la comunicación y manejo de peticiones.
 
 ## Instrucciones para correr los contenedores
 1. Clonar el repositorio.
 2. Entrar a la carpeta del repositorio.
-3. En caso de tener contenedores corriendo, asegurarte de que todos los contenedores están detenidos. 
+3. En caso de tener contenedores corriendo, asegurarte de que todos los contenedores están detenidos.
     ```
     > docker stop (docker ps -q -a)
     ```
-4. Asegurarte de que todos los puertos necesarios para correr los contenedores estén disponibles. 
-5. Como paso opcional puedes eliminar todas las imagenes para que no causen ningún tipo de conflicto. 
+4. Asegurarte de que todos los puertos necesarios para correr los contenedores estén disponibles.
+5. Como paso opcional puedes eliminar todas las imagenes para que no causen ningún tipo de conflicto.
     ```
-    > docker system prune --all 
+    > docker system prune --all
     ```
-6. Múevete a la rama **development**
+6. Múevete a la rama **final**
     ```
     > git branch
-    > git checkout development
+    > git checkout final
     ```
-7. Corre el cliente.
+
+7. Para poder ejecutar el programa entra a la carpeta de personas-mascotas-crud, esto es con el comando que se muestra, y una vez ahi dentro continuar con los siguientes pasos
+    ```
+    > cd personas-mascotas-crud
+    ```
+
+8. Corre el cliente.
     ```
     > docker build -t "react-app" ./client/
     ```
     ![CLIENT IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/cli_client.jpg)
-8. Corre el servidor.
+9. Corre el servidor.
     ```
     > docker build -t "api-server" ./server/
     ```
     ![SERVER IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/cli_server.jpg)
-9. Por último, corre el orquestador. 
+10. Por último, corre el orquestador.
 
     ```
     > docker-compose up
     ```
 
     ![ORQUESTADOR IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/cli_orquestador.jpg)
-    
+
     ![DOCKER IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/docker.jpg)
 ## Instrucciones para acceder a los servicios
 1. El servicio de MongoDB corre en el puerto 27017.
-2. El servicio de NodeJS y Express (API) corre en http://localhost:3000. 
+2. El servicio de NodeJS y Express (API) corre en http://localhost:3000.
 
 
 ## Recorrido por la página web de ReactJS
-Este servicio nos permite registrar usuarios con respectivas mascotas (Únicamente perros). 
+Este servicio nos permite registrar usuarios con respectivas mascotas (Únicamente perros).
 
 Al dar clic en ___Crear datos___, podrás registrar tus propios usuarios. Por defecto el formulario ya cuenta con información base para que la demostración sea más rápida.
 <br> <br> ![REACT1 IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/react_1.jpg)
@@ -97,7 +103,7 @@ Si los campos se encuentran llenados correctamente, nos aparece una alerta de é
 
 De lo contrario, no podrá avanzar al registro.
 
-Al dar clic en ___Listar datos___, podemos acceder a las personas guardadas correctamente. 
+Al dar clic en ___Listar datos___, podemos acceder a las personas guardadas correctamente.
 <br> <br> ![REACT3 IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/Images/react_3.jpg)
 
 Aquí podemos **leer**, **modificar** y **eliminar** los datos de cualquier persona deseada.
@@ -121,7 +127,7 @@ Mientras que para generar nuestro diagrama de base de datos usamos una herramien
 <br> <br> ![DIAGRAMA DB IMAGE](https://github.com/EdsonAmaya7/Microservicios/blob/development/diagrams/diagrama_db.jpg)
 
 ## Agradecimientos
-- Al profesor Angel Santiago Jaime Zavala, por siempre estar al pendiente de nosotros y nuestras necesidades. Lo tqm. 
+- Al profesor Angel Santiago Jaime Zavala, por siempre estar al pendiente de nosotros y nuestras necesidades. Lo tqm.
 
 - A nuestro mismo equipo por contribuir frecuentemente a este proyecto, no darse por vencido y hacer un gran trabajo a pesar de las adversidades.
 

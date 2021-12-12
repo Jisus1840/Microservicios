@@ -1,0 +1,11 @@
+{
+  "scripts":{
+    "nodeprecated": "mocha --no-deprecation",
+    "test": "mocha --require js:babel-register",
+    "test:watch": "mocha --watch --require js:babel-register"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3"
+  }
+}
